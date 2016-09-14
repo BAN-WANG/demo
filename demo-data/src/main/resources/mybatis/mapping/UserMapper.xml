@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.company.data.dao.UserDao" >
+    <resultMap id="UserResult" type="com.company.data.model.User">
+        <!--property为java对象属性名，column为表的列名-->
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="birthday" column="birthday"/>
+    </resultMap>
+
+    <sql id="commonColumns">
+        id,
+        name,
+        birthday
+    </sql>
+
+    <select id="qryById" resultMap="UserResult">
+        SELECT <include refid="commonColumns"/>
+        FROM user
+        WHERE id = #{id}
+    </select>
+
+</mapper>
