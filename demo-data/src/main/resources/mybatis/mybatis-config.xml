@@ -6,5 +6,9 @@
     <settings>
         <setting name="logPrefix" value="daoLog."/>
     </settings>
+    
+    <plugins>
+        <plugin interceptor="com.demo.base.mybatis.PageInterceptor"></plugin>
+    </plugins>
 
 </configuration>

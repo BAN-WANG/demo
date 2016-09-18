@@ -21,4 +21,13 @@
         WHERE id = #{id}
     </select>
 
+    <select id="pageUser" resultMap="UserResult">
+        SELECT <include refid="commonColumns"/>
+        FROM user
+        <if test="name!=null and name!=''">
+        WHERE name like #{name}
+        </if>
+        ORDER BY id DESC
+    </select>
+
 </mapper>
