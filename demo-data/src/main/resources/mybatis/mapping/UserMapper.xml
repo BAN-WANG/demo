@@ -30,4 +30,9 @@
         ORDER BY id DESC
     </select>
 
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO USER(<include refid="commonColumns"/>)
+        VALUES (#{id},#{name},#{birthday})
+    </insert>
+
 </mapper>

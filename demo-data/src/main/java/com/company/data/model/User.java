@@ -1,6 +1,7 @@
 package com.company.data.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -31,6 +32,7 @@ public class User implements Serializable {
         return birthday;
     }
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }

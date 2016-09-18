@@ -23,5 +23,6 @@
 
         <context:component-scan base-package="com.company"/>
 
+        <bean id="demoExceptionResolver" class="com.demo.base.Exception.DemoExceptionResolver"/>
 
 </beans>

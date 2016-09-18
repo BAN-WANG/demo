@@ -37,4 +37,10 @@ public class UserController {
         return userService.pageUser(name,page);
     }
 
+    @RequestMapping("add")
+    @ResponseBody
+    public Boolean add(User user) throws DemoException{
+        return userService.add(user);
+    }
+
 }

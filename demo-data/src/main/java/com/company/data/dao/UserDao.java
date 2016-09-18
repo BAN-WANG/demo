@@ -12,4 +12,5 @@ import java.util.List;
 public interface UserDao {
     User qryById(Long id);
     List<User> pageUser(@Param("name")String name,Page<User> page);
+    int add(User user);
 }
