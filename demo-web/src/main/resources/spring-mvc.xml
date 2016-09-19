@@ -25,4 +25,15 @@
 
         <bean id="demoExceptionResolver" class="com.demo.base.Exception.DemoExceptionResolver"/>
 
+
+        <!--@aspectj启动，子类代理-->
+        <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+        <!--将定义aspectj扫入spring bean容器里（二选一）-->
+        <context:component-scan base-package="com.company.aspectj">
+            <context:include-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/>
+        </context:component-scan>
+        <!--<bean id="logAspectj" class="com.company.aspectj.LogAspectj"/>-->
+
+
 </beans>

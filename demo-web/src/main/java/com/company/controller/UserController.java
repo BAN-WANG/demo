@@ -1,5 +1,6 @@
 package com.company.controller;
 
+import com.company.aspectj.Log;
 import com.company.data.model.User;
 import com.company.service.UserService;
 import com.demo.base.Exception.DemoException;
@@ -19,6 +20,7 @@ public class UserController {
 
     @RequestMapping("qryUserById")
     @ResponseBody
+    @Log
     public User qryUserById(Long id) throws DemoException{
         if(id == null){
             throw new DemoException("id为空");
