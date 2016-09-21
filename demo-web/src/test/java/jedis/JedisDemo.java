@@ -5,9 +5,6 @@ import redis.clients.jedis.*;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Administrator on 2016/8/30.
- */
 public class JedisDemo {
     private static final JedisPool JEDIS_POOL;
 
@@ -36,7 +33,7 @@ public class JedisDemo {
     public static void stringCmdTest(Jedis jedis){
         System.out.println("----------------redis-String-----------------");
         //set:返回操作结果
-        System.out.println("name=>wangshaoyi:"+jedis.set("name","wangshaoyi"));
+        System.out.println("name=>wsy:"+jedis.set("name","wsy"));
 
         //get:value
         System.out.println("name:"+jedis.get("name"));
@@ -54,7 +51,7 @@ public class JedisDemo {
         System.out.println("setrange:"+jedis.setrange("name", 10, "#"));
 
         //mset:批量设置，返回批量设置结果
-        System.out.println("mset:"+jedis.mset("name","wangshaoyi","age", "29"));
+        System.out.println("mset:"+jedis.mset("name","wsy","age", "29"));
 
         //mget:返回数组
         System.out.println("mget:"+jedis.mget("name","age"));
@@ -72,10 +69,10 @@ public class JedisDemo {
         System.out.println("decrBy:"+jedis.decrBy("age",3));
 
         //setex:设置key值+有效时间，如果key存在则覆盖value
-        System.out.println("setex:"+jedis.setex("phone",10,"136975111"));
+        System.out.println("setex:"+jedis.setex("phone",10,"13600000001"));
 
         //setnx:当key不存在时，设置才成功
-        System.out.println("setnx:"+jedis.setnx("address","湖南省长沙市岳麓区桐梓坡西路298号"));
+        System.out.println("setnx:"+jedis.setnx("address","china"));
 
         //del:删除对应key
         System.out.println("del:"+jedis.del("address1"));
@@ -84,6 +81,10 @@ public class JedisDemo {
 
     }
 
+    /**
+     * redis中hash类型常用操作
+     * @param jedis
+     */
     public static void hashMapCmdTest(Jedis jedis){
         System.out.println("----------------redis-HashMap-----------------");
         //hset:返回值为key为新返回1，为旧覆盖旧值返回0
@@ -185,14 +186,14 @@ public class JedisDemo {
 
 
         //sadd:集合添加元素,返回添加成功后数据
-        System.out.println("sadd:"+jedis.sadd("phones","13696735111","13875360787"));
-        System.out.println("sadd:"+jedis.sadd("phones","13696735112","13875360787"));
+        System.out.println("sadd:"+jedis.sadd("phones","13600000001","13300000001"));
+        System.out.println("sadd:"+jedis.sadd("phones","13600000002","13300000002"));
 
         //scard:返回集合中元素数
         System.out.println("scard:"+jedis.scard("phones"));
 
-        jedis.sadd("phones_old","13696735112");
-        jedis.sadd("phones_old_1","13875360787");
+        jedis.sadd("phones_old","13600000002");
+        jedis.sadd("phones_old_1","13300000001");
 
         //sdiff:首set与其他set之间的差集，返回差集值
         System.out.println("sdiff:"+jedis.sdiff("phones","phones_old","phones_old_1"));
@@ -204,13 +205,13 @@ public class JedisDemo {
         System.out.println("sinter:"+jedis.sinter("phones","phones_new"));
 
         //sismember:判断value是否为set的值
-        System.out.println("sismember:"+jedis.sismember("phones","13696735111"));
+        System.out.println("sismember:"+jedis.sismember("phones","13600000001"));
 
         //smembers:返回集合中成员
         System.out.println("smembers:"+jedis.smembers("phones"));
 
         //smove:将首源set中元素移动目标set，返回移动数
-        System.out.println("smove:"+jedis.smove("phones","phones_new","13696735112"));
+        System.out.println("smove:"+jedis.smove("phones","phones_new","13600000002"));
 
         //spop:随机移除set的一元素，返回移除元素
         System.out.println("spop:"+jedis.spop("phones"));
@@ -219,7 +220,7 @@ public class JedisDemo {
         System.out.println("srandmember:"+jedis.srandmember("phones_new"));
 
         //srem:删除集合中指定元素
-        System.out.println("srem:"+jedis.srem("phones_new","13696735112"));
+        System.out.println("srem:"+jedis.srem("phones_new","13600000002"));
 
         //sunion:集合中并集
         System.out.println("sunion:"+jedis.sunion("phones","phones_new","phones_old"));
@@ -301,10 +302,10 @@ public class JedisDemo {
     public static void main(String[] args) {
         Jedis jedis = JEDIS_POOL.getResource();
         stringCmdTest(jedis);
-//        hashMapCmdTest(jedis);
-//        listCmdTest(jedis);
-//        setCmdTest(jedis);
-//        sortedSetTest(jedis);
+        hashMapCmdTest(jedis);
+        listCmdTest(jedis);
+        setCmdTest(jedis);
+        sortedSetTest(jedis);
 
         System.out.println("命令参考地址=>http://redisdoc.com/");
     }
