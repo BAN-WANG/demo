@@ -35,5 +35,11 @@
         </context:component-scan>
         <!--<bean id="logAspectj" class="com.company.aspectj.LogAspectj"/>-->
 
+        <!--spring最多加载一个context:property-placeholder-->
+        <!--如果去掉jdbc.properties加载，demo-web启动会提示找不对应变量值-->
+        <context:property-placeholder location="classpath:redis.properties,classpath*:jdbc.properties"/>
+
+        <!--将spring-redis引入spring中-->
+        <import resource="spring-redis.xml"/>
 
 </beans>
