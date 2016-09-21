@@ -1,7 +1,7 @@
 package com.company.data.dao;
 
 import com.company.data.model.User;
-import com.demo.base.mybatis.Page;
+import com.company.base.mybatis.Page;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

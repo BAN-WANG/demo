@@ -1,4 +1,4 @@
-package com.demo.base.Exception;
+package com.company.base.exception;
 
 /**
  * Created by Administrator on 2016/9/13.

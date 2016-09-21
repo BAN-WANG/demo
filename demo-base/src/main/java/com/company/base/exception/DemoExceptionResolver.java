@@ -1,7 +1,8 @@
-package com.demo.base.Exception;
+package com.company.base.exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+@Component
 public class DemoExceptionResolver implements HandlerExceptionResolver {
     private static final Logger LOG = LoggerFactory.getLogger(DemoExceptionResolver.class);
 

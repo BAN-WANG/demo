@@ -2,8 +2,8 @@ package com.company.service;
 
 import com.company.data.dao.UserDao;
 import com.company.data.model.User;
-import com.demo.base.Exception.DemoException;
-import com.demo.base.mybatis.Page;
+import com.company.base.exception.DemoException;
+import com.company.base.mybatis.Page;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

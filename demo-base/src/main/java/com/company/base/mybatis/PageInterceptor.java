@@ -1,4 +1,4 @@
-package com.demo.base.mybatis;
+package com.company.base.mybatis;
 
 import org.apache.ibatis.binding.MapperMethod;
 import org.apache.ibatis.executor.parameter.ParameterHandler;

@@ -1,4 +1,4 @@
-package com.demo.base.mybatis;
+package com.company.base.mybatis;
 
 import java.io.Serializable;
 import java.util.HashMap;

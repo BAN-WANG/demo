@@ -13,27 +13,18 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd
         ">
 
-        <!--spring-mvc组件默认配置+启动注解等等-->
-        <mvc:annotation-driven/>
-
         <!--spring ioc中扫描-讲注解Controller扫入-->
         <!--<context:component-scan base-package="com.company.controller">-->
             <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
         <!--</context:component-scan>-->
 
+        <!--spring-mvc组件默认配置+启动注解等等-->
+        <mvc:annotation-driven/>
+
         <context:component-scan base-package="com.company"/>
-
-        <bean id="demoExceptionResolver" class="com.demo.base.Exception.DemoExceptionResolver"/>
-
 
         <!--@aspectj启动，子类代理-->
         <aop:aspectj-autoproxy proxy-target-class="true"/>
-
-        <!--将定义aspectj扫入spring bean容器里（二选一）-->
-        <context:component-scan base-package="com.company.aspectj">
-            <context:include-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/>
-        </context:component-scan>
-        <!--<bean id="logAspectj" class="com.company.aspectj.LogAspectj"/>-->
 
         <!--spring最多加载一个context:property-placeholder-->
         <!--如果去掉jdbc.properties加载，demo-web启动会提示找不对应变量值-->
@@ -41,5 +32,5 @@
 
         <!--将spring-redis引入spring中-->
         <import resource="spring-redis.xml"/>
-
+        <import resource="spring-mybatis.xml"/>
 </beans>
