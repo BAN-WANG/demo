@@ -23,7 +23,7 @@ public class DemoController {
     @ResponseBody
     public String sayHello(String name){
         LOG.info("前置参数name=>{}",name);
-        return "Hello,"+name+"!";
+        return "你好,"+name+"!";
     }
 
     @RequestMapping("getUser")

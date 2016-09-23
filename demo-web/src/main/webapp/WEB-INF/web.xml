@@ -34,10 +34,20 @@
             </param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
+
+        <!--Servlet3.0配置文件上传参数-->
+        <multipart-config>
+            <!--<location>D:\\upload</location>-->
+            <!--<max-file-size>1024</max-file-size>-->
+            <!--<max-request-size>1024</max-request-size>-->
+            <!--<file-size-threshold>1</file-size-threshold>-->
+        </multipart-config>
     </servlet>
     <servlet-mapping>
         <servlet-name>DispatcherServlet</servlet-name>
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
+
+
 
 </web-app>

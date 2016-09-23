@@ -30,6 +30,7 @@ public class DemoExceptionResolver implements HandlerExceptionResolver {
         if (ex instanceof DemoException) {
             pw.write(ex.getMessage());
         } else {
+            LOG.error("系统异常",ex);
             pw.write("系统异常，请联系管理员");
         }
 
