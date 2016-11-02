@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class UserService {
+public class UserService implements IBaseService {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
