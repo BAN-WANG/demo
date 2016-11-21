@@ -45,4 +45,6 @@
         <!--将spring-redis引入spring中-->
         <import resource="spring-redis.xml"/>
         <import resource="spring-mybatis.xml"/>
+        <import resource="spring-quartz.xml"/>
+
 </beans>
