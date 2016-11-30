@@ -13,6 +13,8 @@
         <module>demo-service</module>
         <module>demo-data</module>
         <module>demo-web</module>
+        <module>demo-api</module>
+        <module>demo-provider</module>
     </modules>
 
     <properties>
