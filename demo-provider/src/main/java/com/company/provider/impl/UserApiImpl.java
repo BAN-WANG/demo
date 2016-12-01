@@ -22,7 +22,7 @@ public class UserApiImpl implements UserApi {
 
     @Override
     public UserDTO qryById(Long id) {
-        UserDTO userDTO = null;
+        UserDTO userDTO = new UserDTO();
         User user = userService.qryUserById(id);
         BeanUtils.copyProperties(user,userDTO);
         return userDTO;
