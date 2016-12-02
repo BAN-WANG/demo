@@ -15,6 +15,7 @@
         <module>demo-web</module>
         <module>demo-api</module>
         <module>demo-provider</module>
+        <module>demo-consumer</module>
     </modules>
 
     <properties>
