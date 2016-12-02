@@ -8,4 +8,7 @@
 
     <!--扫描dubbo注解类-->
     <dubbo:annotation package="com.company.provider.impl" />
+
+    <!--重试机制-0次，超时时间-3秒-->
+    <dubbo:provider retries="0" timeout="3000"/>
 </beans>

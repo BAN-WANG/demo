@@ -26,11 +26,11 @@
         </mvc:annotation-driven>
 
         <!--spring ioc中扫描-讲注解Controller扫入-->
-        <!--<context:component-scan base-package="com.company.consumer.controller">-->
-            <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
-        <!--</context:component-scan>-->
+        <context:component-scan base-package="com.company.consumer.controller">
+            <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        </context:component-scan>
 
-        <context:component-scan base-package="com.company"/>
+        <!--<context:component-scan base-package="com.company"/>-->
 
         <!--引入dubbo消费者配置-->
         <import resource="classpath:spring-consumer.xml"/>
