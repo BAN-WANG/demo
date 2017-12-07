@@ -26,7 +26,7 @@ public class FileController {
             throw new DemoException("文件过大");
         }
 
-        //获取文件名333
+        //获取文件名666
         String fileName = PartUtils.getFileName(file);
 
         InputStream is = file.getInputStream();
