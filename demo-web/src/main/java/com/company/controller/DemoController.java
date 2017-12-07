@@ -23,7 +23,7 @@ import java.util.Map;
 public class DemoController {
     private static final Logger LOG= LoggerFactory.getLogger(DemoController.class);
 
-    @RequestMapping("sayHello111")
+    @RequestMapping("sayHello222")
     @ResponseBody
     public String sayHello(String name){
         LOG.info("前置参数name=>{}",name);
